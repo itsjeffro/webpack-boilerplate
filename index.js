@@ -5,11 +5,11 @@ const app = express();
 const hostname = 'localhost';
 const port = 3000;
 
-app.use(express.static('public'));
+app.use(express.static('build'));
 
 app.get('/*', (req, res) => {
   try {
-    res.sendFile(path.join(__dirname, 'public/index.html'))
+    res.sendFile(path.join(__dirname, 'build/index.html'))
   } catch(e) {
     console.log(e.toString());
   }
