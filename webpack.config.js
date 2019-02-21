@@ -3,11 +3,14 @@ const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  
   entry: './src/main.ts',
+  
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
-    hot: true
+    contentBase: path.resolve(__dirname, 'build')
   },
+  
   module: {
     rules: [
       {
@@ -22,6 +25,7 @@ module.exports = {
       }
     ]
   },
+  
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CopyPlugin([
@@ -31,9 +35,11 @@ module.exports = {
       }
     ])
   ],
+  
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
   },
+  
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'build')
