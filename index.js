@@ -2,8 +2,10 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-const hostname = 'localhost';
-const port = 3000;
+require('dotenv').config();
+
+const hostname = process.env.HOST || 'localhost';
+const port = process.env.PORT || 3000;
 
 app.use(express.static('build'));
 
@@ -15,6 +17,6 @@ app.get('/*', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log('Running on port ' + hostname + ':' + port);
+const server = app.listen(port, () => {
+  console.log('Running on port ' + server.address().address + ':' + port);
 });
