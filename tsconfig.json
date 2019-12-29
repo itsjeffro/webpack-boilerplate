@@ -1,8 +1,26 @@
 {
   "compilerOptions": {
+
+    // Warn on expressions and declarations with an implied 'any' type.
     "noImplicitAny": true,
+
     "module": "es6",
+
     "target": "es5",
-    "allowJs": true
-  }
+
+    "allowJs": true,
+
+    // Set React as the JSX factory
+    "jsx": "react",
+
+    // Include module source maps for debugging
+    "sourceMap": true
+
+  },
+
+  "exclude": [
+
+    "node_modules"
+
+  ]
 }
