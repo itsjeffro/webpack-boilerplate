@@ -1,5 +1,13 @@
 # webpack-boilerplate
 
+The boilerplate includes:
+
+- React
+- React Router DOM
+- Typescript
+- Webpack
+- Jest
+
 ## Installation
 Install dependencies.
 
