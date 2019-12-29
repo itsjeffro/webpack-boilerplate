@@ -8,6 +8,10 @@ module.exports = {
   entry: './src/main.tsx',
   
   devServer: {
+    // Allow direct url access to routes without displaying the typical 404 message.
+    historyApiFallback: true,
+
+    // Tell the server where to serve content from.
     contentBase: path.resolve(__dirname, 'build')
   },
   
